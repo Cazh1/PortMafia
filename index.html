@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/main.css" type="text/css">
+    
+      <h3>Menu</h3>
+    <nav class="menu">
+        <a href="/index" class="menu-item">Dashboard</a>
+        <a href="/howto" class="menu-item">How To Use</a>
+    </nav>
+
+    <title>Boaty McBoatFace</title>
+</head>
+
+<body>
+    <div class="flex-parent">
+        <div class="login-box flex-child">
+            <h2>Ship Journey!</h2>
+            <form>
+                <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>Ship International Maritime Organization (IMO) Number</label>
+                </div>
+
+                <div>
+                    <button class="button-1" onclick="">Predict</button>
+                    <label class="toggle">
+                        <input type="checkbox" id="searchToggle" >
+                        <span class="slider"></span>
+                        <span class="labels" data-on="Prototype" data-off="Future"></span>
+                    </label>
+                </div>
+                
+                </br>
+                <div id="advanceSearch" style="display: none;">
+                    <br>
+                    <div class="user-box">
+                        <input type="text" name="">
+                        <label>Start Date</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="">
+                        <label>End Date</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="">
+                        <label>Start Port</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="">
+                        <label>End Port</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="">
+                        <label>Simulate Weather</label>
+                    </div>
+            </form>
+        </div>
+        <div class="map flex-child">
+            <img src="./public/media/world-map-cartoon.jpg" width="1000px">
+            <svg id="Path" width="154" height="179" viewBox="0 0 154 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M103.551 1.6624C114.346 12.9331 122.185 24.2083 128.578 38.6451C135.709 54.7482 141.221 71.7271 132.656 88.2459C126.669 99.7927 112.492 113.203 98.6361 113.203C94.2702 113.203 89.3375 112.101 92.9545 106.58C99.3084 96.8823 112.798 93.6968 123.419 91.9406C130.937 90.6974 139.475 89.4892 144.856 96.0537C151.327 103.949 152.739 115.067 151.862 124.915C151.185 132.513 149.061 141.099 144.193 147.223C137.294 155.905 123.362 159.978 113.59 163.954C90.6453 173.29 67.2769 176.056 42.6915 176.572C33.2808 176.77 23.6994 176.83 14.3183 175.945C9.94228 175.532 2.53715 174.898 2.11854 168.973C1.67641 162.716 8.22938 156.705 11.9481 152.242" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                    
+            <img src="./public/media/boat.png" class="item" id="ship" width="50px">
+        </div>
+        <div class="controls">
+            <label for="distance">offset-distance: <span id="percent">0%</span></label>
+           <input value="0" id="distance" min="0" max="100" type="range">
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const range = document.querySelector('input[type="range"]');
+    const percent = document.querySelector('#percent');
+    range.addEventListener('input', function(event) {
+      percent.textContent = `${event.currentTarget.value}%`;
+      document.documentElement.style.setProperty('--distance', `${event.currentTarget.value}%`);
+    })
+
+
+    let checkbox = document.getElementById('searchToggle');
+    var x = document.getElementById("advanceSearch");
+    checkbox.addEventListener( "change", () => {
+      if (checkbox.checked) {
+        x.style.display = "block";
+        text.innerHTML = " Check box is checked. ";
+      } else {
+        x.style.display = "none";
+      }
+    })
+</script>

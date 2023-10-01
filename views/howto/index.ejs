@@ -1,0 +1,57 @@
+<h2>Search Ship</h2>
+<div class="home-container3">
+    <div class="home-container4">
+      <div class="home-container5">
+        <div class="home-container6">
+          <span>Wondering when will the ship arrive?</span>
+        </div>
+        <input type="text" placeholder="Ship Tacking Number" class="input" />
+        <input type="checkbox" id="searchToggle" class="toggle slider" />
+      </div>
+      <input
+        type="text"
+        placeholder="Start Date"
+        class="home-textinput1 input"
+      />
+    </div>
+    <div class="container">
+        <img src="http://localhost:3000/media/world-map-cartoon.jpg" class="map" width="1500px" id="map" alt="Map"/>
+        <img src="http://localhost:3000/media/boat.png" class="ship" width="75px" id="ship" alt="Ship"/>
+    </div>
+</div>
+
+<style>
+    :root {
+        --distance: 0;
+    }
+    .container {
+        flex: 0 0 auto;
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .map {
+        align-self: flex-end;
+        object-fit: cover;
+        position: absolute;
+        right: 200px;
+        z-index: 100;
+    }
+    .ship {
+        top: 400px;
+        right: 470px;
+        position: absolute;
+        object-fit: cover;
+        z-index: 200;
+    }
+    .home-ship-path {
+        top: 206px;
+        left: 607px;
+        width: 86px;
+        height: 98px;
+        position: absolute;
+        object-fit: cover;
+    }
+
+</style>
